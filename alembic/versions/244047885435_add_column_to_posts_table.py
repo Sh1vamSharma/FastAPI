@@ -20,7 +20,7 @@ depends_on = None
 def upgrade() -> None:
     op.add_column("posts", sa.Column('content', sa.String(),  nullable=False))
     op.add_column("posts", sa.Column('published', sa.Boolean(), server_default="True", nullable=False))
-    op.add_column("posts", sa.Column('Created_at', sa.TIMESTAMP(timezone=True), 
+    op.add_column("posts", sa.Column('created_at', sa.TIMESTAMP(timezone=True), 
                           server_default=sa.text("now()"), nullable=False))
 
 
