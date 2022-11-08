@@ -16,7 +16,7 @@ def create_user(user:schemas.UserCreate, db: Session = Depends(database.get_db))
     if pre_exist_user:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, 
                             detail="unable to create user, a user is already registerd with this email")
-    
+    print(user.dict())
     # creating a hash for password field:
     user.password = utils.hash(user.password)
 
