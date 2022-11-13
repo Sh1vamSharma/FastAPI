@@ -26,15 +26,13 @@ app.add_middleware(
 
 @app.get("/")
 def test_posts(db: Session=Depends(get_db)):
-    return {"status" : "Database connection successfully established.Welcome to MyFirstAPI"}
+    return {"status" : "Welcome to Shivam's first API."}
 
 # Getting the routed path operation from the other files
 app.include_router(post.router)
 app.include_router(user.router) 
 app.include_router(auth.router)
 app.include_router(vote.router)
-
-
 
 
   
